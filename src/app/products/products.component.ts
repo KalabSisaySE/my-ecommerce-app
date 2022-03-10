@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Product, PRODUCTS } from './product.object';
 
 @Component({
@@ -17,14 +18,15 @@ product: Product = {
 }
 
 productList = PRODUCTS
-  constructor() { }
+  constructor(private router:Router) { }
 
   ngOnInit(): void {
     console.log('Method called')
   }
 
-  onViewDetail(id: number){
+  editProduct(id: number){
     console.log(id);
+    this.router.navigateByUrl('/products/edit/' + id)
   }
 
 }
