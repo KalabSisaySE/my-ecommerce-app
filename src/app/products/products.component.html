@@ -1,9 +1,11 @@
 <p>products works!</p>
-<div class="card" style="width: 18rem;">
-    <img src="../../assets/Nike.jpg" class="card-img-top" alt="...">
+<div class="card" *ngFor="let product of productList" style="width: 18rem;">
+    <img [src]="product.imageUrl" class="card-img-top" alt="Nike Shoes">
     <div class="card-body">
-        <h5 class="card-title">{{productName | uppercase}}</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
+        <h5 class="card-title">{{product.name| uppercase}}</h5>
+        <input [(ngModel)]="product.name" placeholder="name">
+        <p class="card-text">{{product.description}}</p>
+        <p class="card-text" *ngIf="product.price < 10">${{product.price}} (*On Discount)</p>
+        <button class="btn btn-primary" (click)="onViewDetail(product.id)">View Detail</button>
     </div>
 </div>
