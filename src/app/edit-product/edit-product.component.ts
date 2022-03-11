@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Product, PRODUCTS } from '../products/product.object';
 
 @Component({
@@ -10,9 +10,11 @@ import { Product, PRODUCTS } from '../products/product.object';
 export class EditProductComponent implements OnInit {
   products = PRODUCTS; // List of products
   selectedProduct = new Product(); // the selected product
-  newProduct: Product = new Product;
+  newProduct = new Product();
   
-  constructor(private route:ActivatedRoute) { }
+  constructor(private route:ActivatedRoute,
+              private router: Router
+    ) { }
 
   ngOnInit(): void {
     this.route.params.subscribe(
@@ -21,15 +23,15 @@ export class EditProductComponent implements OnInit {
             if (product.id == param['id']){ this.selectedProduct = product; }
           }
       }
-    );
+    )
   }
 
   updateProduct(){
+    console.log('This is update')
     this.selectedProduct.name = this.newProduct.name;
     this.selectedProduct.price = this.newProduct.price;
     this.newProduct = new Product();
-    //this.route.navigateByUrl('products');
-
+    this.router.navigateByUrl('products');
   }
 
 }
