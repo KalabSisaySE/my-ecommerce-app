@@ -29,7 +29,8 @@ export class EditProductComponent implements OnInit {
   updateProduct(){
     console.log('This is update')
     this.selectedProduct.name = this.p.name;
-    //this.selectedProduct.price = this.p.price;
+    this.selectedProduct.price = this.p.price;
+    this.selectedProduct.description = this.p.description;
     //this.p = new Product();
     this.router.navigateByUrl('products');
   }

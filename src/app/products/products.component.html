@@ -5,6 +5,8 @@
         <div class="card-body">
             <h5 class="card-title">{{product.name| uppercase}}</h5>
             <!--  <input [(ngModel)]="product.name" placeholder="name"> -->
+            <p class="card-text">{{product.price}}</p>
+            <p class="card-text">{{product.description}}</p>
             <p class="card-text" *ngIf="product.price < 10">${{product.price}} (*On Discount)</p>
             <br> <br>
             <button class="btn btn-primary" (click)="editProduct(product.id)">View Detail</button>
