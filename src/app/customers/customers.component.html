@@ -7,7 +7,7 @@
             <h5 class="card-title" [style.color]="customersArray.numberOfYear > 2? 'orange': 'black'">{{customersArray.name}}</h5>
             <p class="card-text">ID: {{customersArray.id}}</p>
             <p class="card-text">Year: {{customersArray.numberOfYear}}</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
+            <a class="btn btn-primary" (click)="editCustomer(customersArray.id)">Go somewhere</a>
         </div>
     </div>
 </div>

@@ -7,13 +7,15 @@ import { AppComponent } from './app.component';
 import { ProductsComponent } from './products/products.component';
 import { CustomersComponent } from './customers/customers.component';
 import { EditProductComponent } from './edit-product/edit-product.component';
+import { EditCustomerComponent } from './edit-customer/edit-customer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProductsComponent,
     CustomersComponent,
-    EditProductComponent
+    EditProductComponent,
+    EditCustomerComponent
   ],
   imports: [
     BrowserModule,
