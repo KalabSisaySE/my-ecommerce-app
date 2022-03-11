@@ -10,7 +10,7 @@ import { Product, PRODUCTS } from '../products/product.object';
 export class EditProductComponent implements OnInit {
   products = PRODUCTS; // List of products
   selectedProduct = new Product(); // the selected product
-  newProduct = new Product();
+  p = new Product();
   
   constructor(private route:ActivatedRoute,
               private router: Router
@@ -28,9 +28,9 @@ export class EditProductComponent implements OnInit {
 
   updateProduct(){
     console.log('This is update')
-    this.selectedProduct.name = this.newProduct.name;
-    this.selectedProduct.price = this.newProduct.price;
-    this.newProduct = new Product();
+    this.selectedProduct.name = this.p.name;
+    //this.selectedProduct.price = this.p.price;
+    //this.p = new Product();
     this.router.navigateByUrl('products');
   }
 

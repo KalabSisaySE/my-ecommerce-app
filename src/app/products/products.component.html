@@ -4,11 +4,9 @@
         <img [src]="product.imageUrl" class="card-img-top" alt="Nike Shoes">
         <div class="card-body">
             <h5 class="card-title">{{product.name| uppercase}}</h5>
-            <input [(ngModel)]="product.name" placeholder="name">
-            <p class="card-text">ID: {{product.id}}</p>
-            <p class="card-text">Price: {{product.price}}</p>
-            <p class="card-text">Description: {{product.description}}</p>
+            <!--  <input [(ngModel)]="product.name" placeholder="name"> -->
             <p class="card-text" *ngIf="product.price < 10">${{product.price}} (*On Discount)</p>
+            <br> <br>
             <button class="btn btn-primary" (click)="editProduct(product.id)">View Detail</button>
         </div>
     </div>
